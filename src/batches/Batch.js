@@ -4,9 +4,9 @@ class Batch extends Component {
 
   render(){
     return(
-      <div>
-        <p>Batch #1</p>
-        <p>Batch #1</p>
+      <div className="outline">
+        <p>Batch Date: {this.props.batch.date}</p>
+        <p>Batch Creator: {this.props.batch.creator}</p>
       </div>
     )
   }

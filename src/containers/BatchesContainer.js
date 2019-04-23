@@ -10,7 +10,7 @@ class BatchesContainer extends Component {
       <div className="outline">
         <h1>Batch Container</h1>
         <BatchInput addBatch={this.props.addBatch}/>
-        <Batches />
+        <Batches batches={this.props.batches}/>
       </div>
     )
   }

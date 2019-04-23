@@ -7,7 +7,7 @@ class Batches extends Component {
     return(
       <div className="outline">
         <h2>List of Batches</h2>
-        <Batch />
+        {this.props.batches.map((batch, idx) => <Batch key={idx} batch={batch}/>)}
       </div>
     )
   }
