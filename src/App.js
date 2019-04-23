@@ -15,7 +15,7 @@ function App() {
         <Route exact path="/" component={Welcome}/>
         <Route exact path="/about" component={About}/>
         <Route exact path="/batches" component={BatchesContainer} />
-        <Route exact path="/batches" component={SamplesContainer} />
+        <Route exact path="/samples" component={SamplesContainer} />
       </Router>
     </div>
   );
