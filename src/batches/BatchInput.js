@@ -5,7 +5,7 @@ class BatchInput extends Component {
     super()
     this.state = {
       creator: "",
-      date: ""
+      date: "",
     }
   }
 
