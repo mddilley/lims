@@ -6,14 +6,19 @@ import App from './App';
 import manageBatch from './reducers/manageBatch'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Header from './header/Header'
 import * as serviceWorker from './serviceWorker';
 
 const store = createStore(manageBatch)
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <Router>
+    <Header />
+    <Provider store={store}>
+      <Route exact path="/batches" component={App} />
+    </Provider>
+  </Router>,
   document.getElementById('root')
 );
 
