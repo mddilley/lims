@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Batches from '../batches/Batches'
 import BatchInput from '../batches/BatchInput'
+import { connect } from 'react-redux'
 
 class BatchesContainer extends Component {
 
@@ -15,4 +16,10 @@ class BatchesContainer extends Component {
   }
 }
 
-export default BatchesContainer;
+const mapStateToProps = state => {
+  return{
+    batches: state.batches
+  }
+}
+
+export default connect(mapStateToProps, null)(BatchesContainer);
