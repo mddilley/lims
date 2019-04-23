@@ -15,10 +15,15 @@ class BatchInput extends Component {
     this.setState(state)
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault()
+    this.props.addBatch(this.state)
+  }
+
   render(){
     return(
       <div className="outline">
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <label>Batch Creator:</label>
           <input type="text" name="creator" onChange={this.handleChange}/><br/>
           <label>Batch Date:</label>
