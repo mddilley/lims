@@ -8,6 +8,7 @@ import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Header from './header/Header'
+import Welcome from './welcome/Welcome'
 import * as serviceWorker from './serviceWorker';
 
 const store = createStore(manageBatch)
@@ -15,6 +16,7 @@ const store = createStore(manageBatch)
 ReactDOM.render(
   <Router>
     <Header />
+    <Route exact path="/" component={Welcome}/>
     <Provider store={store}>
       <Route exact path="/batches" component={App} />
     </Provider>
