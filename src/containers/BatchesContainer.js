@@ -9,7 +9,7 @@ class BatchesContainer extends Component {
     return(
       <div className="outline">
         <h1>Batch Container</h1>
-        <BatchInput />
+        <BatchInput addBatch={this.props.addBatch}/>
         <Batches />
       </div>
     )
@@ -22,4 +22,8 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, null)(BatchesContainer);
+const mapDispatchToProps = dispatch => ({
+  addBatch: batch => dispatch({type: 'ADD_BATCH', batch}),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(BatchesContainer);
