@@ -8,7 +8,7 @@ Clone this repository, and then, in the terminal, execute:
 
     $ npm i && npm start
 
-Then, visit https://localhost:3000 in your browser.
+Then, visit http://localhost:3000 in your browser.
 
 ## Contributing
 

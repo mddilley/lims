@@ -1,11 +1,24 @@
 import React, { Component } from 'react'
 
 class BatchInput extends Component {
+  constructor(){
+    super()
+    this.state = {
+      creator: "",
+      date: ""
+    }
+  }
 
   render(){
     return(
       <div className="outline">
-        <h2>Batch Form</h2>
+        <form>
+          <label>Batch Creator:</label>
+          <input type="text" /><br/>
+          <label>Batch Date:</label>
+          <input type="date" /><br/>
+          <input type="submit" />
+        </form>
       </div>
     )
   }
