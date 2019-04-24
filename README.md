@@ -1,6 +1,6 @@
 # Oculus LIMS
 
-Keep your eye on patient specimens and track their results with this laboratory information system.
+Keep your eye on patient specimens and track their results with this laboratory information system. The Rails API backend for this project is located at https://github.com/mddilley/oculus-lims-api.
 
 ## Installation
 
