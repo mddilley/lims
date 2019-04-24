@@ -6,7 +6,7 @@ class Samples extends Component {
     const samples = this.props.samples
     return(
       <div className="outline">
-        {samples.map((sample, idx) => <Sample key={idx} sample={sample}/>)}
+        {samples.map((sample, idx) => <Sample key={idx} sample={sample} deleteSample={this.props.deleteSample}/>)}
       </div>
     )
   }

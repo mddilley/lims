@@ -10,7 +10,7 @@ class SamplesContainer extends Component {
       <div className="outline">
         <h1>Batch ID# {batchId}</h1>
         <SampleInput batchId={batchId} addSample={this.props.addSample}/>
-        <Samples samples={this.props.samples}/>
+        <Samples samples={this.props.samples} deleteSample={this.props.deleteSample}/>
       </div>
     )
   }
@@ -24,7 +24,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return{
-    addSample: sample => dispatch({type: 'ADD_SAMPLE', sample})
+    addSample: sample => dispatch({type: 'ADD_SAMPLE', sample}),
+    deleteSample: sampleId => dispatch({type: 'DELETE_SAMPLE', sampleId}),
   }
 }
 
