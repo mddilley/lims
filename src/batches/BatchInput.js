@@ -12,7 +12,9 @@ class BatchInput extends Component {
   handleChange = (event) => {
     const state = {}
     state[event.target.name] = event.target.value
-    this.setState(state)
+    const batch = {}
+    batch["attributes"] = state
+    this.setState(batch)
   }
 
   handleSubmit = (event) => {

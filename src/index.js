@@ -5,10 +5,11 @@ import './index.css';
 import App from './App';
 import manageBatch from './reducers/manageBatch'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
 import * as serviceWorker from './serviceWorker';
 
-const store = createStore(manageBatch)
+const store = createStore(manageBatch, applyMiddleware(thunk))
 
 ReactDOM.render(
   <Provider store={store}>
