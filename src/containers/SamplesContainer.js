@@ -6,7 +6,7 @@ class SamplesContainer extends Component {
   render(){
     return(
       <div className="outline">
-        <h1>Samples container</h1>
+        <h1>Batch ID# {this.props.location.state.batchId}</h1>
         <SampleInput />
         <Samples />
       </div>
