@@ -16,10 +16,15 @@ class SamplesInput extends Component {
     this.setState(state)
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault()
+    this.props.addSample(this.state)
+  }
+
   render(){
     return(
       <div className="outline">
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <label>Sample Patient First Name:</label>
           <input type="text" name="firstName" onChange={this.handleChange}/><br/>
           <label>Sample Patient Last Name:</label>
