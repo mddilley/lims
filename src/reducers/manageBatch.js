@@ -10,6 +10,10 @@ export default function manageBatch(state = {batches: []}, action){
     case 'DELETE_BATCH':
       console.log("inside DELETE_BATCH case in reducer")
       return {...state, batches: state.batches.filter(batch => batch.batchId !== action.batchId)}
+    case 'ADD_SAMPLE':
+      console.log("inside ADD_SAMPLE case in reducer")
+      debugger
+      return ""
     default:
       return state
   }
