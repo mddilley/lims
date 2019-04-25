@@ -11,11 +11,16 @@ class BatchesContainer extends Component {
   }
 
   render(){
+    let loader = ""
+    if(this.props.loading === true){
+      loader = <div className="loader container"></div>
+    }
     return(
       <div className="outline">
         <h1>Batch Container</h1>
         <BatchInput addBatch={this.props.addBatch}/>
         <Batches batches={this.props.batches} deleteBatch={this.props.deleteBatch}/>
+        {loader}
       </div>
     )
   }
@@ -23,7 +28,8 @@ class BatchesContainer extends Component {
 
 const mapStateToProps = state => {
   return{
-    batches: state.batches
+    batches: state.batches,
+    loading: state.loading
   }
 }
 
