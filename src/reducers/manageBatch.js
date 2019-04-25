@@ -9,7 +9,7 @@ export default function manageBatch(state = {batches: [], samples: [], loading: 
       return {...state, batches: [...state.batches, batch]}
     case 'DELETE_BATCH':
       console.log("inside DELETE_BATCH case in reducer")
-      return {...state, batches: state.batches.filter(batch => batch.batchId !== action.batchId)}
+      return {...state, batches: state.batches.filter(batch => batch.id !== action.payload), loading: false}
     case 'ADD_SAMPLE':
       console.log("inside ADD_SAMPLE case in reducer")
       const sample = {...action.sample, sampleId: cuid()}

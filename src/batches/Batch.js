@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 class Batch extends Component {
 
   handleClick = (event) => {
-    this.props.deleteBatch(this.props.batch.attributes.batchCuid)
+    this.props.deleteBatch(this.props.batch.id)
   }
 
   render(){

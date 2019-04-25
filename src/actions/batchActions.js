@@ -33,5 +33,15 @@ export function addBatch(batch) {
 }
 
 export function deleteBatch(batchId) {
-  return { type: 'DELETE_BATCH', batchId }
+  return dispatch => {
+    console.log("inside return")
+    dispatch({ type: 'LOADING_BATCHES' });
+    return fetch(`http://localhost:4000/batches/${batchId}`,{
+      method: 'DELETE',
+      body: JSON.stringify(snakeCaseKeys({batch: {id: batchId}})),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(() => dispatch({ type: 'DELETE_BATCH', payload: batchId}))
+  }
 }
