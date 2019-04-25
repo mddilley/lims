@@ -13,7 +13,7 @@ export function fetchBatches() {
 }
 
 export function postBatches(batch) {
-  console.log("inside fetch")
+  console.log("inside post fetch")
   return dispatch => {
     console.log("inside return")
     dispatch({ type: 'LOADING_BATCHES' });
