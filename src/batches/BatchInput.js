@@ -1,4 +1,7 @@
 import React, { Component } from 'react'
+import cuid from 'cuid';
+export const cuidFn = cuid;
+const snakeCaseKeys = require('snakecase-keys')
 
 class BatchInput extends Component {
   constructor(){
@@ -18,11 +21,10 @@ class BatchInput extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
     const batch = {}
-    batch["attributes"] = this.state
-    console.log(this.state)
+    batch["attributes"] = {...this.state, batchCuid: cuid()}
     fetch('http://localhost:4000/batches',{
       method: 'POST',
-      body: JSON.stringify({batch: batch.attributes}),
+      body: JSON.stringify(snakeCaseKeys({batch: batch.attributes})),
       headers: {
         'Content-Type': 'application/json'
       }

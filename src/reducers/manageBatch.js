@@ -5,7 +5,7 @@ export default function manageBatch(state = {batches: [], samples: [], loading: 
   switch(action.type){
     case 'ADD_BATCH':
       console.log("inside ADD_BATCH case in reducer")
-      const batch = {...action.batch, attributes: {batchCuid: cuid()}}
+      const batch = action.batch
       return {...state, batches: [...state.batches, batch]}
     case 'DELETE_BATCH':
       console.log("inside DELETE_BATCH case in reducer")
