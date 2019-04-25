@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Batches from '../batches/Batches'
 import BatchInput from '../batches/BatchInput'
 import { connect } from 'react-redux'
-import { fetchBatches, addBatch, deleteBatch } from '../actions/batchActions'
+import { fetchBatches, addBatch, deleteBatch, postBatches } from '../actions/batchActions'
 
 class BatchesContainer extends Component {
 
@@ -18,7 +18,7 @@ class BatchesContainer extends Component {
     return(
       <div className="outline">
         <h1>Batch Container</h1>
-        <BatchInput addBatch={this.props.addBatch}/>
+        <BatchInput postBatches={this.props.postBatches}/>
         <Batches batches={this.props.batches} deleteBatch={this.props.deleteBatch}/>
         {loader}
       </div>
@@ -35,4 +35,4 @@ const mapStateToProps = state => {
 
 
 
-export default connect(mapStateToProps, {addBatch, fetchBatches, deleteBatch})(BatchesContainer);
+export default connect(mapStateToProps, {addBatch, fetchBatches, deleteBatch, postBatches})(BatchesContainer);

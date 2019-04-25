@@ -8,17 +8,18 @@ class Batch extends Component {
   }
 
   render(){
-    const batch = this.props.batch.attributes
+    const batchAttr = this.props.batch.attributes
+    const batch = this.props.batch
     return(
       <div className="outline">
         <p>Batch ID: <Link to={{
-          pathname: '/samples',
+          pathname: `batches/${batch.id}/samples`,
           state: {
-            batchId: batch.batchCuid
+            batchId: batchAttr.batchCuid
           }
-        }}>{batch.batchCuid}</Link></p>
-        <p>Batch Date: {batch.date}</p>
-        <p>Batch Creator: {batch.creator}</p>
+        }}>{batchAttr.batchCuid}</Link></p>
+        <p>Batch Date: {batchAttr.date}</p>
+        <p>Batch Creator: {batchAttr.creator}</p>
         <button onClick={this.handleClick}>Delete</button>
 
       </div>

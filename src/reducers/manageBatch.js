@@ -5,7 +5,7 @@ export default function manageBatch(state = {batches: [], samples: [], loading: 
   switch(action.type){
     case 'ADD_BATCH':
       console.log("inside ADD_BATCH case in reducer")
-      const batch = action.batch
+      const batch = action.batch.attributes
       return {...state, batches: [...state.batches, batch]}
     case 'DELETE_BATCH':
       console.log("inside DELETE_BATCH case in reducer")
@@ -23,6 +23,11 @@ export default function manageBatch(state = {batches: [], samples: [], loading: 
     case 'FETCHING_BATCHES':
       console.log("inside FETCHING_BATCHES case in reducer")
       return {...state, batches: action.payload, loading: false}
+    case 'POSTING_BATCHES':
+      console.log("inside POSTING_BATCHES case in reducer")
+      debugger
+      const postBatch = {...action.payload, id: action.payload.id}
+      return {...state, batches: [...state.batches, postBatch]}
     default:
       return state
   }
