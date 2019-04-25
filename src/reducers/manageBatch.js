@@ -25,9 +25,8 @@ export default function manageBatch(state = {batches: [], samples: [], loading: 
       return {...state, batches: action.payload, loading: false}
     case 'POSTING_BATCHES':
       console.log("inside POSTING_BATCHES case in reducer")
-      debugger
       const postBatch = {...action.payload, id: action.payload.id}
-      return {...state, batches: [...state.batches, postBatch]}
+      return {...state, batches: [...state.batches, postBatch], loading: false}
     default:
       return state
   }

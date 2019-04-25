@@ -24,7 +24,7 @@ export function postBatches(batch) {
         'Content-Type': 'application/json'
       }
     }).then(response => response.json())
-      .then(json => dispatch({ type: 'ADD_BATCH', payload: json.data}))
+      .then(json => dispatch({ type: 'POSTING_BATCHES', payload: json.data}))
   }
 }
 
