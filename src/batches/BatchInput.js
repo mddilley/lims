@@ -19,7 +19,14 @@ class BatchInput extends Component {
     event.preventDefault()
     const batch = {}
     batch["attributes"] = this.state
-    console.log(batch)
+    console.log(this.state)
+    fetch('http://localhost:4000/batches',{
+      method: 'POST',
+      body: JSON.stringify({batch: batch.attributes}),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
     this.props.addBatch(batch)
   }
 
