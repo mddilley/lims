@@ -1,4 +1,4 @@
-import { Navbar, NavDropdown, Nav } from 'react-bootstrap'
+import { Navbar, Nav } from 'react-bootstrap'
 import React, { Component } from 'react'
 
 class Header extends Component {

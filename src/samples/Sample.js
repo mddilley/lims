@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 class Sample extends Component {
   handleClick = event => {
-    this.props.deleteSample(this.props.sample.sampleId)
+    this.props.deleteSample(this.props.sample.id)
   }
 
   render(){
