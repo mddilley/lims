@@ -1,7 +1,7 @@
 import cuid from 'cuid';
 export const cuidFn = cuid;
 
-export default function manageBatch(state = {batches: [], samples: [], loading: false}, action){
+export default function manageBatch(state = {batches: [], loading: false}, action){
   switch(action.type){
     case 'ADD_BATCH':
       console.log("inside ADD_BATCH case in reducer")

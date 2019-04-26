@@ -28,8 +28,8 @@ class BatchesContainer extends Component {
 
 const mapStateToProps = state => {
   return{
-    batches: state.batches,
-    loading: state.loading
+    batches: state.batches.batches,
+    loading: state.batches.loading
   }
 }
 
