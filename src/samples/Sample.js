@@ -6,13 +6,12 @@ class Sample extends Component {
   }
 
   render(){
-    const sample = this.props.sample
+    const sample = this.props.sample.attributes
     return(
       <div className="outline">
-        <p>{sample.sampleId}</p>
-        <p>{sample.firstName}</p>
-        <p>{sample.lastName}</p>
-        <p>{sample.age}</p>
+        <p>Sample ID# {sample.sampleCuid}</p>
+        <p>Patient Name: {sample.firstName + " " + sample.lastName}</p>
+        <p>Age: {sample.age}</p>
         <button onClick={this.handleClick}>Delete</button>
       </div>
     )

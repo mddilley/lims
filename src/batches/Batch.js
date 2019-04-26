@@ -18,7 +18,7 @@ class Batch extends Component {
             batchId: batchAttr.batchCuid,
             id: batch.id
           }
-        }}>{batchAttr.batchCuid}</Link></p>
+        }}>{batchAttr.batchCuid}</Link> ({batch.relationships.samples.data.length} samples)</p>
         <p>Batch Date: {batchAttr.date}</p>
         <p>Batch Creator: {batchAttr.creator}</p>
         <button onClick={this.handleClick}>Delete</button>
