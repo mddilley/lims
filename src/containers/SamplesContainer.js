@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Samples from '../samples/Samples'
 import SampleInput from '../samples/SampleInput'
 import { connect } from 'react-redux'
+import { addSample, deleteSample } from '../actions/sampleActions'
 
 class SamplesContainer extends Component {
   render(){
@@ -28,11 +29,4 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return{
-    addSample: sample => dispatch({type: 'ADD_SAMPLE', sample}),
-    deleteSample: sampleId => dispatch({type: 'DELETE_SAMPLE', sampleId}),
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(SamplesContainer);
+export default connect(mapStateToProps, { addSample, deleteSample })(SamplesContainer);
