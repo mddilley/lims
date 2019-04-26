@@ -15,7 +15,8 @@ class Batch extends Component {
         <p>Batch ID: <Link to={{
           pathname: `batches/${batch.id}/samples`,
           state: {
-            batchId: batchAttr.batchCuid
+            batchId: batchAttr.batchCuid,
+            id: batch.id
           }
         }}>{batchAttr.batchCuid}</Link></p>
         <p>Batch Date: {batchAttr.date}</p>

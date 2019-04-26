@@ -2,19 +2,23 @@ import React, { Component } from 'react'
 import Samples from '../samples/Samples'
 import SampleInput from '../samples/SampleInput'
 import { connect } from 'react-redux'
-import { addSample, deleteSample } from '../actions/sampleActions'
+import { addSample, deleteSample, fetchSamples } from '../actions/sampleActions'
 
 class SamplesContainer extends Component {
+  componentDidMount() {
+    this.props.fetchSamples(this.props.location.state.id)
+  }
+
   render(){
-    const batchId = this.props.location.state.batchId
+    const batchCuid = this.props.location.state.batchId
     let loader = ""
     if(this.props.loading === true){
       loader = <div className="loader container"></div>
     }
     return(
       <div className="outline">
-        <h1>Batch ID# {batchId}</h1>
-        <SampleInput batchId={batchId} addSample={this.props.addSample}/>
+        <h1>Batch ID# {batchCuid}</h1>
+        <SampleInput batchId={batchCuid} addSample={this.props.addSample}/>
         <Samples samples={this.props.samples} deleteSample={this.props.deleteSample}/>
         {loader}
       </div>
@@ -29,4 +33,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { addSample, deleteSample })(SamplesContainer);
+export default connect(mapStateToProps, { addSample, deleteSample, fetchSamples })(SamplesContainer);

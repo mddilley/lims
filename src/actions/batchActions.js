@@ -2,7 +2,7 @@ import fetch from 'isomorphic-fetch'
 const snakeCaseKeys = require('snakecase-keys')
 
 export function fetchBatches() {
-  console.log("inside fetch")
+  console.log("inside fetch batches")
   return dispatch => {
     console.log("inside return")
     dispatch({ type: 'LOADING_BATCHES' });

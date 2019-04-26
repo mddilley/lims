@@ -10,6 +10,12 @@ export default function manageSample(state = {samples: [], loading: false}, acti
     case 'DELETE_SAMPLE':
       console.log("inside DELETE_SAMPLE case in reducer")
       return {...state, samples: state.samples.filter(sample => sample.sampleId !== action.sampleId)}
+    case 'LOADING_SAMPLES':
+      console.log("inside LOADING_SAMPLES case in reducer")
+      return {...state, loading: true }
+    case 'FETCHING_SAMPLES':
+      console.log("inside FETCHING_SAMPLES case in reducer")
+      return {...state, samples: action.payload, loading: false}
     default:
       return state
   }
