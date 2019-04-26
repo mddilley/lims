@@ -23,8 +23,8 @@ class SamplesContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    samples: state.samples,
-    loading: state.loading
+    samples: state.samples.samples,
+    loading: state.samples.loading
   }
 }
 
