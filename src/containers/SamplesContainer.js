@@ -16,7 +16,7 @@ class SamplesContainer extends Component {
       loader = <div className="loader container"></div>
     }
     return(
-      <div className="outline">
+      <div className="grey-background">
         <h1>Batch ID# {batchCuid}</h1>
         <SampleInput batchId={batchCuid} addSample={this.props.addSample}/>
         <Samples samples={this.props.samples} deleteSample={this.props.deleteSample}/>

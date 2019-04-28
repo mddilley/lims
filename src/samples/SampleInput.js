@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Container } from 'react-bootstrap'
 
 class SamplesInput extends Component {
   constructor(){
@@ -23,16 +24,20 @@ class SamplesInput extends Component {
 
   render(){
     return(
-      <div className="outline">
-        <form onSubmit={this.handleSubmit}>
-          <label>Sample Patient First Name:</label>
-          <input type="text" name="firstName" onChange={this.handleChange}/><br/>
-          <label>Sample Patient Last Name:</label>
-          <input type="text" name="lastName" onChange={this.handleChange}/><br/>
-          <label>Sample Patient Age:</label>
-          <input type="text" name="age" onChange={this.handleChange}/><br/>
-          <input type="submit" />
-        </form>
+      <div>
+        <Container className="white-background">
+        <br/>
+          <h2>Add New Sample to Batch</h2>
+          <form onSubmit={this.handleSubmit}>
+            <label>Sample Patient First Name:</label>
+            <input type="text" name="firstName" onChange={this.handleChange}/><br/>
+            <label>Sample Patient Last Name:</label>
+            <input type="text" name="lastName" onChange={this.handleChange}/><br/>
+            <label>Sample Patient Age:</label>
+            <input type="text" name="age" onChange={this.handleChange}/><br/>
+            <input type="submit" />
+          </form>
+        </Container>
       </div>
     )
   }
