@@ -17,7 +17,6 @@ class BatchesContainer extends Component {
     }
     return(
       <div className="grey-background">
-        <h1>Batches</h1>
         <BatchInput postBatches={this.props.postBatches}/>
         <Batches batches={this.props.batches} deleteBatch={this.props.deleteBatch}/>
         {loader}

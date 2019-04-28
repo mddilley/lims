@@ -81,3 +81,7 @@ img.small-img {
 h1, h4{
   display: inline;
 }
+
+.batch-space {
+  margin-bottom: 10px;
+}

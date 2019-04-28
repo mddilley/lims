@@ -28,6 +28,7 @@ class BatchInput extends Component {
   render(){
     return(
       <div>
+        <h2>Create a New Batch</h2>
         <Container className="white-background">
           <br/>
           <form onSubmit={this.handleSubmit}>

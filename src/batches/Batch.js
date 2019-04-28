@@ -11,7 +11,7 @@ class Batch extends Component {
     const batchAttr = this.props.batch.attributes
     const batch = this.props.batch
     return(
-      <div className="outline">
+      <div className="white-background batch-space">
         <p>Batch ID: <Link to={{
           pathname: `batches/${batch.id}/samples`,
           state: {
