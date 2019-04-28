@@ -55,6 +55,14 @@ div.outline {
   padding-bottom: 30px;
 }
 
+.white-background {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  color: black;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
 img.small-img {
   border-radius: 20px;
   width: 400px;

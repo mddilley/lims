@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Container } from 'react-bootstrap'
 import cuid from 'cuid';
 export const cuidFn = cuid;
 
@@ -26,14 +27,17 @@ class BatchInput extends Component {
 
   render(){
     return(
-      <div className="outline">
-        <form onSubmit={this.handleSubmit}>
-          <label>Batch Creator:</label>
-          <input type="text" name="creator" onChange={this.handleChange}/><br/>
-          <label>Batch Date:</label>
-          <input type="date" name="date" onChange={this.handleChange}/><br/>
-          <input type="submit" />
-        </form>
+      <div>
+        <Container className="white-background">
+          <br/>
+          <form onSubmit={this.handleSubmit}>
+            <label>Batch Creator:</label>
+            <input type="text" name="creator" onChange={this.handleChange}/><br/>
+            <label>Batch Date:</label>
+            <input type="date" name="date" onChange={this.handleChange}/><br/>
+            <input type="submit" />
+          </form>
+        </Container>
       </div>
     )
   }
