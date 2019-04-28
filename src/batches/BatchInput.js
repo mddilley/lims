@@ -36,7 +36,7 @@ class BatchInput extends Component {
             <input type="text" name="creator" onChange={this.handleChange}/><br/>
             <label>Batch Date:</label>
             <input type="date" name="date" onChange={this.handleChange}/><br/>
-            <input type="submit" />
+            <input className="btn btn-success" type="submit" />
           </form>
         </Container>
       </div>

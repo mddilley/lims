@@ -35,7 +35,7 @@ class SamplesInput extends Component {
             <input type="text" name="lastName" onChange={this.handleChange}/><br/>
             <label>Sample Patient Age:</label>
             <input type="text" name="age" onChange={this.handleChange}/><br/>
-            <input type="submit" />
+            <input className="btn btn-success" type="submit" />
           </form>
         </Container>
       </div>

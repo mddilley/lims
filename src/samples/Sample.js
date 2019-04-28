@@ -12,7 +12,7 @@ class Sample extends Component {
         <p>Sample ID# {sample.sampleCuid}</p>
         <p>Patient Name: {sample.firstName + " " + sample.lastName}</p>
         <p>Age: {sample.age}</p>
-        <button onClick={this.handleClick}>Delete</button>
+        <button className="btn btn-danger" onClick={this.handleClick}>Delete</button>
       </div>
     )
   }
