@@ -9,7 +9,7 @@ export function deleteSample(sampleId) {
   return dispatch => {
     console.log("inside return")
     dispatch({ type: 'LOADING_SAMPLES' });
-    return fetch(`http://localhost:4000/samples/${sampleId}`,{
+    return fetch(`https://oculus-lims.herokuapp.com/samples/${sampleId}`,{
       method: 'DELETE',
       body: JSON.stringify(snakeCaseKeys({sample: {id: sampleId}})),
       headers: {
@@ -24,7 +24,7 @@ export function fetchSamples(batchId) {
   return dispatch => {
     console.log("inside return")
     dispatch({ type: 'LOADING_SAMPLES' });
-    return fetch(`http://localhost:4000/batches/${batchId}/samples`)
+    return fetch(`https://oculus-lims.herokuapp.com/batches/${batchId}/samples`)
       .then(response => response.json())
       .then(json => dispatch({ type: 'FETCHING_SAMPLES', payload: json.data}))
   }
@@ -35,7 +35,7 @@ export function postSample(sample) {
   return dispatch => {
     console.log("inside return")
     dispatch({ type: 'LOADING_SAMPLES' });
-    return fetch(`http://localhost:4000/batches/${sample.batchId}/samples`,{
+    return fetch(`https://oculus-lims.herokuapp.com/batches/${sample.batchId}/samples`,{
       method: 'POST',
       body: JSON.stringify(snakeCaseKeys({sample: sample.attributes})),
       headers: {
