@@ -29,3 +29,19 @@ export function fetchSamples(batchId) {
       .then(json => dispatch({ type: 'FETCHING_SAMPLES', payload: json.data}))
   }
 }
+
+export function postSample(sample) {
+  console.log("inside post fetch")
+  return dispatch => {
+    console.log("inside return")
+    dispatch({ type: 'LOADING_SAMPLES' });
+    return fetch(`http://localhost:4000/batches/${sample.batchId}/samples`,{
+      method: 'POST',
+      body: JSON.stringify(snakeCaseKeys({sample: sample.attributes})),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    }).then(response => response.json())
+      .then(json => dispatch({ type: 'POSTING_SAMPLES', payload: json.data}))
+  }
+}

@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { Container } from 'react-bootstrap'
+import cuid from 'cuid';
+export const cuidFn = cuid;
 
 class SamplesInput extends Component {
   constructor(){
@@ -19,7 +21,9 @@ class SamplesInput extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    this.props.addSample(this.state)
+    const sample = {}
+    sample["attributes"] = {...this.state, sampleCuid: cuid()}
+    this.props.postSample(sample) //NEED BATCHID ASSIGNED
   }
 
   render(){

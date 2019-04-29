@@ -5,7 +5,7 @@ export default function manageSample(state = {samples: [], loading: false}, acti
   switch(action.type){
     case 'ADD_SAMPLE':
       console.log("inside ADD_SAMPLE case in reducer")
-      const sample = {...action.sample, sampleId: cuid()}
+      const sample = action.sample.attributes
       return {...state, samples: [...state.samples, sample]}
     case 'DELETE_SAMPLE':
       console.log("inside DELETE_SAMPLE case in reducer")
@@ -16,6 +16,10 @@ export default function manageSample(state = {samples: [], loading: false}, acti
     case 'FETCHING_SAMPLES':
       console.log("inside FETCHING_SAMPLES case in reducer")
       return {...state, samples: action.payload, loading: false}
+    case 'POSTING_SAMPLES':
+      console.log("inside POSTING_BATCHES case in reducer")
+      const postSample = {...action.payload, id: action.payload.id}
+      return {...state, samples: [...state.samples, postSample], loading: false}
     default:
       return state
   }

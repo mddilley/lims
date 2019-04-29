@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Samples from '../samples/Samples'
 import SampleInput from '../samples/SampleInput'
 import { connect } from 'react-redux'
-import { addSample, deleteSample, fetchSamples } from '../actions/sampleActions'
+import { postSample, deleteSample, fetchSamples } from '../actions/sampleActions'
 
 class SamplesContainer extends Component {
   componentDidMount() {
@@ -18,7 +18,7 @@ class SamplesContainer extends Component {
     return(
       <div className="grey-background">
         <h1>Batch ID# {batchCuid}</h1>
-        <SampleInput batchId={batchCuid} addSample={this.props.addSample}/>
+        <SampleInput batchId={batchCuid} postSample={this.props.postSample}/>
         <Samples samples={this.props.samples} deleteSample={this.props.deleteSample}/>
         {loader}
       </div>
@@ -33,4 +33,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { addSample, deleteSample, fetchSamples })(SamplesContainer);
+export default connect(mapStateToProps, { postSample, deleteSample, fetchSamples })(SamplesContainer);
