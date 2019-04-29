@@ -18,7 +18,7 @@ class SamplesContainer extends Component {
     return(
       <div className="grey-background">
         <h1>Batch ID# {batchCuid}</h1>
-        <SampleInput batchId={batchCuid} postSample={this.props.postSample}/>
+        <SampleInput batchId={batchCuid} postSample={this.props.postSample} batchId={this.props.location.state.id}/>
         <Samples samples={this.props.samples} deleteSample={this.props.deleteSample}/>
         {loader}
       </div>
