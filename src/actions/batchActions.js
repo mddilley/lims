@@ -6,7 +6,7 @@ export function fetchBatches() {
   return dispatch => {
     console.log("inside return")
     dispatch({ type: 'LOADING_BATCHES' });
-    return fetch('https://oculus-lims.herokuapp.com/batches')
+    return fetch('https://oculus-lims-api.herokuapp.com/batches')
       .then(response => response.json())
       .then(json => dispatch({ type: 'FETCHING_BATCHES', payload: json.data}))
   }
@@ -17,7 +17,7 @@ export function postBatches(batch) {
   return dispatch => {
     console.log("inside return")
     dispatch({ type: 'LOADING_BATCHES' });
-    return fetch('https://oculus-lims.herokuapp.com/batches',{
+    return fetch('https://oculus-lims-api.herokuapp.com/batches',{
       method: 'POST',
       body: JSON.stringify(snakeCaseKeys({batch: batch.attributes})),
       headers: {
@@ -36,7 +36,7 @@ export function deleteBatch(batchId) {
   return dispatch => {
     console.log("inside return")
     dispatch({ type: 'LOADING_BATCHES' });
-    return fetch(`https://oculus-lims.herokuapp.com/batches/${batchId}`,{
+    return fetch(`https://oculus-lims-api.herokuapp.com/batches/${batchId}`,{
       method: 'DELETE',
       body: JSON.stringify(snakeCaseKeys({batch: {id: batchId}})),
       headers: {
