@@ -23,6 +23,7 @@ class BatchInput extends Component {
     const batch = {}
     batch["attributes"] = {...this.state, batchCuid: cuid()}
     this.props.postBatches(batch)
+    event.target.reset();
   }
 
   render(){

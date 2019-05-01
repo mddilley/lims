@@ -23,7 +23,8 @@ class SamplesInput extends Component {
     event.preventDefault()
     const sample = {}
     sample["attributes"] = {...this.state, sampleCuid: cuid(), batchId: this.props.batchId}
-    this.props.postSample(sample) //NEED BATCHID ASSIGNED
+    this.props.postSample(sample)
+    event.target.reset();
   }
 
   render(){
