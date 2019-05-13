@@ -1,5 +1,5 @@
 import { Navbar, Nav } from 'react-bootstrap'
-import React, { Component } from 'react'
+import React from 'react'
 
 const Header = () =>
   <Navbar bg="light" expand="lg">
