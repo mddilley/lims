@@ -7,7 +7,6 @@ export function addSample(sample) {
 
 export function deleteSample(sampleId) {
   return dispatch => {
-    console.log("inside return")
     dispatch({ type: 'LOADING_SAMPLES' });
     return fetch(`https://oculus-lims-api.herokuapp.com/samples/${sampleId}`,{
       method: 'DELETE',
@@ -20,9 +19,7 @@ export function deleteSample(sampleId) {
 }
 
 export function fetchSamples(batchId) {
-  console.log("inside fetch samples")
   return dispatch => {
-    console.log("inside return")
     dispatch({ type: 'LOADING_SAMPLES' });
     return fetch(`https://oculus-lims-api.herokuapp.com/batches/${batchId}/samples`)
       .then(response => response.json())
@@ -31,9 +28,7 @@ export function fetchSamples(batchId) {
 }
 
 export function postSample(sample) {
-  console.log("inside post fetch")
   return dispatch => {
-    console.log("inside return")
     dispatch({ type: 'LOADING_SAMPLES' });
     return fetch(`https://oculus-lims-api.herokuapp.com/batches/${sample.batchId}/samples`,{
       method: 'POST',

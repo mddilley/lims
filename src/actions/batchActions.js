@@ -2,9 +2,7 @@ import fetch from 'isomorphic-fetch'
 const snakeCaseKeys = require('snakecase-keys')
 
 export function fetchBatches() {
-  console.log("inside fetch batches")
   return dispatch => {
-    console.log("inside return")
     dispatch({ type: 'LOADING_BATCHES' });
     return fetch('https://oculus-lims-api.herokuapp.com/batches')
       .then(response => response.json())
@@ -13,9 +11,7 @@ export function fetchBatches() {
 }
 
 export function postBatches(batch) {
-  console.log("inside post fetch")
   return dispatch => {
-    console.log("inside return")
     dispatch({ type: 'LOADING_BATCHES' });
     return fetch('https://oculus-lims-api.herokuapp.com/batches',{
       method: 'POST',
@@ -34,7 +30,6 @@ export function addBatch(batch) {
 
 export function deleteBatch(batchId) {
   return dispatch => {
-    console.log("inside return")
     dispatch({ type: 'LOADING_BATCHES' });
     return fetch(`https://oculus-lims-api.herokuapp.com/batches/${batchId}`,{
       method: 'DELETE',
